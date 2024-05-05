@@ -114,7 +114,7 @@ class Controller {
         try {
             const data = await user_model.find({accountNumber:accountNumber});
             if(data.length == 0){
-                return res.status(404).json({ status: 404, message: "id not found" })
+                return res.status(404).json({ status: 404, message: "account number not found" })
             }
             await redis_set(`:${accountNumber}`,JSON.stringify(data))
 
@@ -131,7 +131,7 @@ class Controller {
         try {
             const data = await user_model.find({identityNumber});
             if(data.length == 0){
-                return res.status(404).json({ status: 404, message: "id not found" })
+                return res.status(404).json({ status: 404, message: "identity number not found" })
             }
             await redis_set(`:${identityNumber}`,JSON.stringify(data))
 
