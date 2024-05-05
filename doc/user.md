@@ -317,7 +317,7 @@ Response (Failed) :
 ```
 
 ## GENERATE TOKEN BY IDENTITY NUMBER
-Endpoint : GET  /user/generate_token_by_identity_number/:identityNumber
+Endpoint : GET  /user/generateTokenByIdentityNumber/:identityNumber
 
 Request Params :
 ```json
