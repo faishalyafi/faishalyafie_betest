@@ -142,13 +142,13 @@ class Controller {
         }
     }
 
-    static async generate_token(req, res) {
-        const { id } = req.params
+    static async generate_token_by_identity_number(req, res) {
+        const { identityNumber } = req.params
         try {
-            const check_user = await user_model.findOne({_id:id});
+            const check_user = await user_model.findOne({identityNumber});
 
             if(!check_user){
-                return res.status(404).json({ status: 404, message: "id not found" })
+                return res.status(404).json({ status: 404, message: "identity number not found" })
             }
 
             const token = generate_token({id:check_user._id, userName:check_user.userName, accountNumber:check_user.accountNumber, emailAddress:check_user.emailAddress, identityNumber:check_user.identityNumber})
