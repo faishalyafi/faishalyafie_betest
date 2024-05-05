@@ -322,7 +322,7 @@ Endpoint : GET  /user/generate_token_by_identity_number/:identityNumber
 Request Params :
 ```json
 {
-    "id": "1234567890100"
+    "identityNumber": "1234567890100"
 }
 ```
 Response (Succes) :
